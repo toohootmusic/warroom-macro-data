@@ -1,6 +1,18 @@
 {
-  "generated_at": null,
-  "next_update": null,
-  "data": {},
-  "errors": []
+  "generated_at": "2026-05-07T21:54:26.356Z",
+  "next_update": "2026-05-08T01:00:00.000Z",
+  "data": {
+    "btc": {
+      "symbol": "BTC-USD",
+      "name": "Bitcoin",
+      "value": 79788,
+      "change_pct": -2.2141272217219754,
+      "change_abs": -1806.6084368579322,
+      "previous_close": 81594.60843685793,
+      "timestamp": "2026-05-07T21:53:17.000Z"
+    }
+  },
+  "errors": [
+    "yahoo: HTTP 401"
+  ]
 }
