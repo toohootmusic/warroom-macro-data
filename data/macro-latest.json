@@ -1,47 +1,63 @@
 {
-  "generated_at": "2026-05-07T22:22:48.838Z",
-  "next_update": "2026-05-08T04:22:48.838Z",
+  "generated_at": "2026-05-07T22:53:23.258Z",
+  "next_update": "2026-05-08T04:53:23.258Z",
   "data": {
     "brent": {
       "symbol": "cb.f",
       "name": "Brent Crude",
       "value": 103.49,
-      "change_pct": null,
-      "change_abs": null,
-      "previous_close": null,
+      "change_pct": 0,
+      "change_abs": 0,
+      "previous_close": 103.49,
       "timestamp": "2026-05-07T23:58:59Z"
     },
     "sp500": {
       "symbol": "^spx",
       "name": "S&P 500",
       "value": 7337.1,
+      "change_pct": 0,
+      "change_abs": 0,
+      "previous_close": 7337.1,
+      "timestamp": "2026-05-07T23:00:00Z"
+    },
+    "dxy": {
+      "symbol": "dx.f",
+      "name": "DXY",
+      "value": 98.15,
       "change_pct": null,
       "change_abs": null,
       "previous_close": null,
-      "timestamp": "2026-05-07T23:00:00Z"
+      "timestamp": "2026-05-07T22:59:56Z"
     },
     "usdbrl": {
       "symbol": "usdbrl",
       "name": "USD/BRL",
       "value": 4.9201,
+      "change_pct": 0,
+      "change_abs": 0,
+      "previous_close": 4.9201,
+      "timestamp": "2026-05-07T18:45:44Z"
+    },
+    "ibov": {
+      "symbol": "^bvp",
+      "name": "IBOV",
+      "value": 183218.26,
       "change_pct": null,
       "change_abs": null,
       "previous_close": null,
-      "timestamp": "2026-05-07T18:45:44Z"
+      "timestamp": "2026-05-07T23:00:00Z"
     },
     "btc": {
       "symbol": "BTC-USD",
       "name": "Bitcoin",
-      "value": 79924,
-      "change_pct": -1.6826531919838998,
-      "change_abs": -1344.8437371612122,
-      "previous_close": 81268.84373716121,
-      "timestamp": "2026-05-07T22:22:48.838Z"
+      "value": 79878,
+      "change_pct": -1.8103459545003684,
+      "change_abs": -1446.0681415358042,
+      "previous_close": 81324.0681415358,
+      "timestamp": "2026-05-07T22:53:23.258Z"
     }
   },
   "errors": [
-    "ibov: fetch failed",
-    "vix: No data",
-    "dxy: No data"
+    "vix: **symbol** or **figi** parameter is missing or invalid. Please provide a valid symbol according to API documentation: https://twelvedata.com/docs#reference-data"
   ]
 }
