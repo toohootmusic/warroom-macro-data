@@ -4,15 +4,17 @@ Automated macro-economic data fetcher that runs on GitHub Actions and stores the
 
 ## Data sources
 
-| Key      | Symbol      | Source        | Description             |
-|----------|-------------|---------------|-------------------------|
-| `brent`  | `BZ=F`      | Yahoo Finance | Brent Crude Oil (USD)   |
-| `sp500`  | `^GSPC`     | Yahoo Finance | S&P 500 Index           |
-| `vix`    | `^VIX`      | Yahoo Finance | CBOE Volatility Index   |
-| `dxy`    | `DX-Y.NYB`  | Yahoo Finance | US Dollar Index         |
-| `usdbrl` | `BRL=X`     | Yahoo Finance | USD/BRL exchange rate   |
-| `ibov`   | `^BVSP`     | Yahoo Finance | Ibovespa Index          |
-| `btc`    | `BTC-USD`   | CoinGecko     | Bitcoin price (USD)     |
+| Key      | Symbol      | Source    | Description             |
+|----------|-------------|-----------|-------------------------|
+| `brent`  | `cb.f`      | Stooq     | Brent Crude Oil (USD)   |
+| `sp500`  | `^spx`      | Stooq     | S&P 500 Index           |
+| `vix`    | `^vix`      | Stooq     | CBOE Volatility Index   |
+| `dxy`    | `^dxy`      | Stooq     | US Dollar Index         |
+| `usdbrl` | `usdbrl`    | Stooq     | USD/BRL exchange rate   |
+| `ibov`   | `^bvsp`     | Stooq     | Ibovespa Index          |
+| `btc`    | `BTC-USD`   | CoinGecko | Bitcoin price (USD)     |
+
+`change_pct` and `change_abs` are derived from the penultimate daily close (Stooq history endpoint), so they reflect day-over-day change.
 
 ## Output structure
 

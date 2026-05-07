@@ -1,6 +1,14 @@
 {
-  "generated_at": null,
-  "next_update": null,
+  "generated_at": "2026-05-07T21:59:56.993Z",
+  "next_update": "2026-05-08T01:00:00.000Z",
   "data": {},
-  "errors": []
+  "errors": [
+    "stooq[cb.f] quote: HTTP 403",
+    "coingecko: HTTP 403",
+    "stooq[^spx] quote: HTTP 403",
+    "stooq[^dxy] quote: HTTP 403",
+    "stooq[usdbrl] quote: HTTP 403",
+    "stooq[^bvsp] quote: HTTP 403",
+    "stooq[^vix] quote: HTTP 403"
+  ]
 }
