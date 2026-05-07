@@ -1,23 +1,21 @@
-#!/usr/bin/env node
+import { writeFileSync, readFileSync, existsSync } from 'node:fs';
+import { mkdirSync } from 'node:fs';
+import { dirname } from 'node:path';
 
-import { readFileSync, writeFileSync, mkdirSync } from 'fs';
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
+const OUTPUT_PATH = 'data/macro-latest.json';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const OUTPUT_PATH = `${__dirname}/../data/macro-latest.json`;
-
-const YAHOO_SYMBOLS = {
-  brent:  { symbol: 'BZ=F',    name: 'Brent Crude Oil' },
-  sp500:  { symbol: '^GSPC',   name: 'S&P 500' },
-  vix:    { symbol: '^VIX',    name: 'CBOE Volatility Index' },
-  dxy:    { symbol: 'DX-Y.NYB',name: 'US Dollar Index' },
-  usdbrl: { symbol: 'BRL=X',   name: 'USD/BRL' },
-  ibov:   { symbol: '^BVSP',   name: 'Ibovespa' },
+const STOOQ_SYMBOLS = {
+  brent:  { symbol: 'cb.f',   name: 'Brent Crude' },
+  sp500:  { symbol: '^spx',   name: 'S&P 500' },
+  vix:    { symbol: '^vix',   name: 'VIX' },
+  dxy:    { symbol: '^dxy',   name: 'DXY' },
+  usdbrl: { symbol: 'usdbrl', name: 'USD/BRL' },
+  ibov:   { symbol: '^bvsp',  name: 'IBOV' },
 };
 
 function loadPrevious() {
   try {
+    if (!existsSync(OUTPUT_PATH)) return {};
     const raw = readFileSync(OUTPUT_PATH, 'utf8');
     const parsed = JSON.parse(raw);
     return parsed.data || {};
@@ -26,129 +24,147 @@ function loadPrevious() {
   }
 }
 
-async function fetchYahoo(keys, prev, errors) {
-  const symbols = keys.map(k => YAHOO_SYMBOLS[k].symbol).join(',');
-  const url = `https://query2.finance.yahoo.com/v7/finance/quote?symbols=${encodeURIComponent(symbols)}&fields=regularMarketPrice,regularMarketChangePercent,regularMarketChange,regularMarketPreviousClose,regularMarketTime`;
-
-  let quotes;
-  try {
-    const res = await fetch(url, {
-      headers: { 'User-Agent': 'Mozilla/5.0' },
-      signal: AbortSignal.timeout(15000),
-    });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const json = await res.json();
-    quotes = json?.quoteResponse?.result ?? [];
-  } catch (err) {
-    errors.push(`yahoo: ${err.message}`);
-    return {};
-  }
-
-  const result = {};
-  for (const key of keys) {
-    const meta = YAHOO_SYMBOLS[key];
-    const q = quotes.find(r => r.symbol === meta.symbol);
-    if (!q) {
-      errors.push(`yahoo: no data for ${meta.symbol}`);
-      if (prev[key]) result[key] = prev[key];
-      continue;
-    }
-    result[key] = {
-      symbol:         meta.symbol,
-      name:           meta.name,
-      value:          q.regularMarketPrice ?? null,
-      change_pct:     q.regularMarketChangePercent ?? null,
-      change_abs:     q.regularMarketChange ?? null,
-      previous_close: q.regularMarketPreviousClose ?? null,
-      timestamp:      q.regularMarketTime ? new Date(q.regularMarketTime * 1000).toISOString() : null,
-    };
-  }
-  return result;
+function parseCSV(text) {
+  const lines = text.trim().split('\n');
+  if (lines.length < 2) return null;
+  const headers = lines[0].split(',');
+  const values = lines[1].split(',');
+  const row = {};
+  headers.forEach((h, i) => row[h.trim()] = values[i]?.trim());
+  return row;
 }
 
-async function fetchBitcoin(prev, errors) {
-  const url = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true&include_last_updated_at=true';
+async function fetchStooqQuote(symbol) {
+  const url = `https://stooq.com/q/l/?s=${encodeURIComponent(symbol)}&f=sd2t2ohlcv&h&e=csv`;
+  const res = await fetch(url, {
+    headers: { 'User-Agent': 'Mozilla/5.0' },
+    signal: AbortSignal.timeout(15000),
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const text = await res.text();
+  const row = parseCSV(text);
+  if (!row || !row.Close || row.Close === 'N/D') throw new Error('No data');
+  return {
+    close: parseFloat(row.Close),
+    timestamp: `${row.Date}T${row.Time}Z`,
+  };
+}
+
+async function fetchStooqHistory(symbol) {
+  const url = `https://stooq.com/q/d/l/?s=${encodeURIComponent(symbol)}&i=d`;
+  const res = await fetch(url, {
+    headers: { 'User-Agent': 'Mozilla/5.0' },
+    signal: AbortSignal.timeout(15000),
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const text = await res.text();
+  const lines = text.trim().split('\n');
+  if (lines.length < 3) throw new Error('Not enough history');
+  const prevLine = lines[lines.length - 2].split(',');
+  const headers = lines[0].split(',');
+  const closeIdx = headers.findIndex(h => h.trim() === 'Close');
+  const prevClose = parseFloat(prevLine[closeIdx]);
+  if (isNaN(prevClose)) throw new Error('Invalid previous close');
+  return prevClose;
+}
+
+async function fetchOne(key, prev, errors) {
+  const { symbol, name } = STOOQ_SYMBOLS[key];
+  const previousData = prev[key] || null;
   try {
-    const res = await fetch(url, {
-      headers: { 'Accept': 'application/json' },
-      signal: AbortSignal.timeout(15000),
-    });
+    const [quoteResult, historyResult] = await Promise.allSettled([
+      fetchStooqQuote(symbol),
+      fetchStooqHistory(symbol),
+    ]);
+    if (quoteResult.status !== 'fulfilled') {
+      throw new Error(quoteResult.reason?.message || 'quote failed');
+    }
+    const value = quoteResult.value.close;
+    const timestamp = quoteResult.value.timestamp;
+    let previous_close = null;
+    let change_abs = null;
+    let change_pct = null;
+    if (historyResult.status === 'fulfilled') {
+      previous_close = historyResult.value;
+      change_abs = value - previous_close;
+      change_pct = (change_abs / previous_close) * 100;
+    } else if (previousData?.value) {
+      previous_close = previousData.value;
+      change_abs = value - previous_close;
+      change_pct = (change_abs / previous_close) * 100;
+    }
+    return {
+      symbol,
+      name,
+      value,
+      change_pct,
+      change_abs,
+      previous_close,
+      timestamp,
+    };
+  } catch (err) {
+    errors.push(`${key}: ${err.message}`);
+    return previousData;
+  }
+}
+
+async function fetchBTC(prev, errors) {
+  try {
+    const url = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_24hr_change=true';
+    const res = await fetch(url, { signal: AbortSignal.timeout(15000) });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const json = await res.json();
-    const btc = json?.bitcoin;
-    if (!btc) throw new Error('unexpected response shape');
-
-    const price = btc.usd;
-    const changePct = btc.usd_24h_change ?? null;
-    const prevClose = changePct !== null && price !== null
-      ? price / (1 + changePct / 100)
-      : (prev.btc?.previous_close ?? null);
-
+    const value = json.bitcoin.usd;
+    const change_pct = json.bitcoin.usd_24h_change;
+    const change_abs = (value * change_pct) / 100;
+    const previous_close = value - change_abs;
     return {
-      symbol:         'BTC-USD',
-      name:           'Bitcoin',
-      value:          price ?? null,
-      change_pct:     changePct,
-      change_abs:     changePct !== null && price !== null ? price - prevClose : null,
-      previous_close: prevClose,
-      timestamp:      btc.last_updated_at ? new Date(btc.last_updated_at * 1000).toISOString() : null,
+      symbol: 'BTC-USD',
+      name: 'Bitcoin',
+      value,
+      change_pct,
+      change_abs,
+      previous_close,
+      timestamp: new Date().toISOString(),
     };
   } catch (err) {
     errors.push(`coingecko: ${err.message}`);
-    return prev.btc ?? null;
+    return prev.btc || null;
   }
-}
-
-function nextUpdate(now) {
-  // scheduled at 13:00, 19:00, 01:00 UTC
-  const slots = [1, 13, 19];
-  const h = now.getUTCHours();
-  const m = now.getUTCMinutes();
-  const todayMinutes = h * 60 + m;
-  for (const slot of slots) {
-    if (slot * 60 > todayMinutes) {
-      const next = new Date(now);
-      next.setUTCHours(slot, 0, 0, 0);
-      return next.toISOString();
-    }
-  }
-  // next day first slot
-  const next = new Date(now);
-  next.setUTCDate(next.getUTCDate() + 1);
-  next.setUTCHours(slots[0], 0, 0, 0);
-  return next.toISOString();
 }
 
 async function main() {
   const prev = loadPrevious();
   const errors = [];
+  const keys = Object.keys(STOOQ_SYMBOLS);
+  const stooqResults = await Promise.all(
+    keys.map(k => fetchOne(k, prev, errors))
+  );
+  const btcResult = await fetchBTC(prev, errors);
+  const data = {};
+  keys.forEach((k, i) => {
+    if (stooqResults[i]) data[k] = stooqResults[i];
+  });
+  if (btcResult) data.btc = btcResult;
   const now = new Date();
-
-  const yahooKeys = Object.keys(YAHOO_SYMBOLS);
-  const [yahooData, btc] = await Promise.all([
-    fetchYahoo(yahooKeys, prev, errors),
-    fetchBitcoin(prev, errors),
-  ]);
-
-  const data = { ...yahooData };
-  if (btc) data.btc = btc;
-
-  // fall back to previous values for any key that failed entirely
-  for (const key of [...yahooKeys, 'btc']) {
-    if (!data[key] && prev[key]) data[key] = prev[key];
-  }
-
+  const next = new Date(now);
+  next.setUTCHours(next.getUTCHours() + 6);
   const output = {
     generated_at: now.toISOString(),
-    next_update:  nextUpdate(now),
+    next_update: next.toISOString(),
     data,
     errors,
   };
-
-  mkdirSync(dirname(OUTPUT_PATH), { recursive: true });
+  const dir = dirname(OUTPUT_PATH);
+  if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
   writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2));
-  console.log(`Written ${OUTPUT_PATH} at ${now.toISOString()}`);
-  if (errors.length) console.warn('Errors:', errors);
+  console.log(`Wrote ${OUTPUT_PATH}`);
+  console.log(`Symbols OK: ${Object.keys(data).length}`);
+  console.log(`Errors: ${errors.length}`);
+  if (errors.length) console.log(errors);
 }
 
-main().catch(err => { console.error(err); process.exit(1); });
+main().catch(err => {
+  console.error('Fatal:', err);
+  process.exit(1);
+});
