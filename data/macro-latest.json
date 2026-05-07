@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-07T22:53:23.258Z",
-  "next_update": "2026-05-08T04:53:23.258Z",
+  "generated_at": "2026-05-07T23:28:52.616Z",
+  "next_update": "2026-05-08T05:28:52.616Z",
   "data": {
     "brent": {
       "symbol": "cb.f",
@@ -24,9 +24,9 @@
       "symbol": "dx.f",
       "name": "DXY",
       "value": 98.15,
-      "change_pct": null,
-      "change_abs": null,
-      "previous_close": null,
+      "change_pct": 0,
+      "change_abs": 0,
+      "previous_close": 98.15,
       "timestamp": "2026-05-07T22:59:56Z"
     },
     "usdbrl": {
@@ -42,22 +42,29 @@
       "symbol": "^bvp",
       "name": "IBOV",
       "value": 183218.26,
-      "change_pct": null,
-      "change_abs": null,
-      "previous_close": null,
+      "change_pct": 0,
+      "change_abs": 0,
+      "previous_close": 183218.26,
       "timestamp": "2026-05-07T23:00:00Z"
+    },
+    "vix": {
+      "symbol": "VIXY",
+      "name": "VIX (proxy: VIXY ETF)",
+      "value": 26.85,
+      "change_pct": -0.88593492,
+      "change_abs": -0.23999977,
+      "previous_close": 27.09,
+      "timestamp": "2026-05-07Z"
     },
     "btc": {
       "symbol": "BTC-USD",
       "name": "Bitcoin",
-      "value": 79878,
-      "change_pct": -1.8103459545003684,
-      "change_abs": -1446.0681415358042,
-      "previous_close": 81324.0681415358,
-      "timestamp": "2026-05-07T22:53:23.258Z"
+      "value": 79951,
+      "change_pct": -1.7462596907188557,
+      "change_abs": -1396.1520853266325,
+      "previous_close": 81347.15208532663,
+      "timestamp": "2026-05-07T23:28:52.616Z"
     }
   },
-  "errors": [
-    "vix: **symbol** or **figi** parameter is missing or invalid. Please provide a valid symbol according to API documentation: https://twelvedata.com/docs#reference-data"
-  ]
+  "errors": []
 }
