@@ -108,14 +108,14 @@ async function fetchOneStooq(key, prev, errors) {
   }
 }
 
-async function fetchVixTwelveData(prev, errors) {
+async function fetchVixProxyTwelveData(prev, errors) {
   const previousData = prev.vix || null;
   if (!TWELVEDATA_API_KEY) {
     errors.push('vix: TWELVEDATA_API_KEY not set');
     return previousData;
   }
   try {
-    const url = `https://api.twelvedata.com/quote?symbol=VIX&apikey=${TWELVEDATA_API_KEY}`;
+    const url = `https://api.twelvedata.com/quote?symbol=VIXY&apikey=${TWELVEDATA_API_KEY}`;
     const res = await fetch(url, { signal: AbortSignal.timeout(15000) });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const json = await res.json();
@@ -126,8 +126,8 @@ async function fetchVixTwelveData(prev, errors) {
     const change_abs = parseFloat(json.change);
     const change_pct = parseFloat(json.percent_change);
     return {
-      symbol: 'VIX',
-      name: 'VIX',
+      symbol: 'VIXY',
+      name: 'VIX (proxy: VIXY ETF)',
       value,
       change_pct: isNaN(change_pct) ? null : change_pct,
       change_abs: isNaN(change_abs) ? null : change_abs,
@@ -172,7 +172,7 @@ async function main() {
   const stooqResults = await Promise.all(
     stooqKeys.map(k => fetchOneStooq(k, prev, errors))
   );
-  const vixResult = await fetchVixTwelveData(prev, errors);
+  const vixResult = await fetchVixProxyTwelveData(prev, errors);
   const btcResult = await fetchBTC(prev, errors);
   const data = {};
   stooqKeys.forEach((k, i) => {
