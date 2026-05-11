@@ -1,5 +1,3 @@
-===INÍCIO DO ARQUIVO===
-```
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from 'node:fs';
 
 const OUTPUT_PATH = 'data/portfolio-latest.json';
@@ -195,4 +193,3 @@ async function main() {
 
 main().catch(err => { console.error('Fatal:', err); process.exit(1); });
 ```
-===FIM DO ARQUIVO===
