@@ -39,7 +39,3 @@ jobs:
             git commit -m "portfolio: update at $BRT_TIME"
             git push
           fi
-
-```
-
-
