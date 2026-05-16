@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-05-16T04:32:06.877Z",
-  "next_update": "2026-05-16T10:32:06.877Z",
+  "generated_at": "2026-05-16T14:17:35.175Z",
+  "next_update": "2026-05-16T20:17:35.175Z",
   "data": {
     "brent": {
       "symbol": "cb.f",
       "name": "Brent Crude",
       "value": 109.26,
-      "change_pct": -0.20094994519546844,
-      "change_abs": -0.21999999999999886,
-      "previous_close": 109.48,
+      "change_pct": 0,
+      "change_abs": 0,
+      "previous_close": 109.26,
       "timestamp": "2026-05-15T23:00:00Z"
     },
     "sp500": {
@@ -24,9 +24,9 @@
       "symbol": "dx.f",
       "name": "DXY",
       "value": 99.208,
-      "change_pct": -0.022170714501668416,
-      "change_abs": -0.02200000000000557,
-      "previous_close": 99.23,
+      "change_pct": 0,
+      "change_abs": 0,
+      "previous_close": 99.208,
       "timestamp": "2026-05-15T23:00:00Z"
     },
     "usdbrl": {
@@ -42,9 +42,9 @@
       "symbol": "^bvp",
       "name": "IBOV",
       "value": 177283.83,
-      "change_pct": 0.025671647887903257,
-      "change_abs": 45.5,
-      "previous_close": 177238.33,
+      "change_pct": 0,
+      "change_abs": 0,
+      "previous_close": 177283.83,
       "timestamp": "2026-05-15T23:00:00Z"
     },
     "vix": {
@@ -59,11 +59,11 @@
     "btc": {
       "symbol": "BTC-USD",
       "name": "Bitcoin",
-      "value": 79008,
-      "change_pct": -2.3467012201293427,
-      "change_abs": -1854.0816999997912,
-      "previous_close": 80862.08169999979,
-      "timestamp": "2026-05-16T04:32:06.877Z"
+      "value": 77918,
+      "change_pct": -1.6840396828115236,
+      "change_abs": -1312.1700400530829,
+      "previous_close": 79230.17004005308,
+      "timestamp": "2026-05-16T14:17:35.175Z"
     }
   },
   "errors": []
