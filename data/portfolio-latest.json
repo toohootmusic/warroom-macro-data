@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-05-20T16:24:15.600Z",
-  "next_update": "2026-05-20T22:24:15.600Z",
+  "generated_at": "2026-05-20T21:04:12.676Z",
+  "next_update": "2026-05-21T03:04:12.676Z",
   "prices": {
     "BTC": {
       "symbol": "BTC",
       "source": "coingecko",
-      "value": 77200,
-      "change_pct": 0.9508055950402707,
-      "change_abs": 734.021919371089,
-      "previous_close": 76465.9780806289,
-      "timestamp": "2026-05-20T16:24:15.247Z"
+      "value": 77612,
+      "change_pct": 0.8721673091133857,
+      "change_abs": 676.906491949081,
+      "previous_close": 76935.09350805092,
+      "timestamp": "2026-05-20T21:04:12.301Z"
     }
   },
   "errors": [
@@ -35,12 +35,12 @@
     "GLD: no data",
     "DIVO: no data",
     "SCHD: no data",
-    "CPFE3: no data",
-    "JBSS3: no data",
-    "BRAP4: no data",
     "BBAS3: no data",
+    "BRAP4: no data",
+    "CPFE3: no data",
+    "KLBN3: no data",
+    "JBSS3: no data",
     "SANB11: no data",
-    "SAPR4: no data",
-    "KLBN3: no data"
+    "SAPR4: no data"
   ]
 }
