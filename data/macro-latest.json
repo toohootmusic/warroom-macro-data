@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-05-24T20:06:56.024Z",
-  "next_update": "2026-05-25T02:06:56.024Z",
+  "generated_at": "2026-05-25T05:24:32.332Z",
+  "next_update": "2026-05-25T11:24:32.332Z",
   "data": {
     "brent": {
       "symbol": "cb.f",
       "name": "Brent Crude",
-      "value": 103.54,
-      "change_pct": 0,
-      "change_abs": 0,
+      "value": 94.52,
+      "change_pct": -8.711609039984557,
+      "change_abs": -9.02000000000001,
       "previous_close": 103.54,
-      "timestamp": "2026-05-22T23:00:00Z"
+      "timestamp": "2026-05-25T07:24:30Z"
     },
     "sp500": {
       "symbol": "^spx",
@@ -23,11 +23,11 @@
     "dxy": {
       "symbol": "dx.f",
       "name": "DXY",
-      "value": 99.186,
-      "change_pct": 0,
-      "change_abs": 0,
+      "value": 98.937,
+      "change_pct": -0.2510434940415073,
+      "change_abs": -0.24900000000000944,
       "previous_close": 99.186,
-      "timestamp": "2026-05-22T23:00:00Z"
+      "timestamp": "2026-05-25T07:23:40Z"
     },
     "usdbrl": {
       "symbol": "usdbrl",
@@ -59,11 +59,11 @@
     "btc": {
       "symbol": "BTC-USD",
       "name": "Bitcoin",
-      "value": 76594,
-      "change_pct": 0.9507860762052708,
-      "change_abs": 728.245087208665,
-      "previous_close": 75865.75491279134,
-      "timestamp": "2026-05-24T20:06:56.024Z"
+      "value": 77301,
+      "change_pct": 0.8916019886471641,
+      "change_abs": 689.2172532441443,
+      "previous_close": 76611.78274675585,
+      "timestamp": "2026-05-25T05:24:32.332Z"
     }
   },
   "errors": []
