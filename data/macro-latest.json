@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-05-25T05:24:32.332Z",
-  "next_update": "2026-05-25T11:24:32.332Z",
+  "generated_at": "2026-05-25T15:44:41.008Z",
+  "next_update": "2026-05-25T21:44:41.008Z",
   "data": {
     "brent": {
       "symbol": "cb.f",
       "name": "Brent Crude",
-      "value": 94.52,
-      "change_pct": -8.711609039984557,
-      "change_abs": -9.02000000000001,
-      "previous_close": 103.54,
-      "timestamp": "2026-05-25T07:24:30Z"
+      "value": 94.55,
+      "change_pct": 0.031739314430809504,
+      "change_abs": 0.030000000000001137,
+      "previous_close": 94.52,
+      "timestamp": "2026-05-25T17:44:37Z"
     },
     "sp500": {
       "symbol": "^spx",
@@ -23,29 +23,29 @@
     "dxy": {
       "symbol": "dx.f",
       "name": "DXY",
-      "value": 98.937,
-      "change_pct": -0.2510434940415073,
-      "change_abs": -0.24900000000000944,
-      "previous_close": 99.186,
-      "timestamp": "2026-05-25T07:23:40Z"
+      "value": 98.905,
+      "change_pct": -0.03234381475079745,
+      "change_abs": -0.031999999999996476,
+      "previous_close": 98.937,
+      "timestamp": "2026-05-25T17:44:37Z"
     },
     "usdbrl": {
       "symbol": "usdbrl",
       "name": "USD/BRL",
-      "value": 5.0239,
-      "change_pct": 0,
-      "change_abs": 0,
+      "value": 5.0054,
+      "change_pct": -0.3682398136905672,
+      "change_abs": -0.018500000000000405,
       "previous_close": 5.0239,
-      "timestamp": "2026-05-22T18:57:04Z"
+      "timestamp": "2026-05-25T17:11:28Z"
     },
     "ibov": {
       "symbol": "^bvp",
       "name": "IBOV",
-      "value": 176209.61,
-      "change_pct": 0,
-      "change_abs": 0,
+      "value": 176736.03,
+      "change_pct": 0.2987464758590708,
+      "change_abs": 526.4200000000128,
       "previous_close": 176209.61,
-      "timestamp": "2026-05-22T23:00:00Z"
+      "timestamp": "2026-05-25T17:29:30Z"
     },
     "vix": {
       "symbol": "VIXY",
@@ -59,11 +59,11 @@
     "btc": {
       "symbol": "BTC-USD",
       "name": "Bitcoin",
-      "value": 77301,
-      "change_pct": 0.8916019886471641,
-      "change_abs": 689.2172532441443,
-      "previous_close": 76611.78274675585,
-      "timestamp": "2026-05-25T05:24:32.332Z"
+      "value": 77565,
+      "change_pct": 1.595032247804487,
+      "change_abs": 1237.1867630095503,
+      "previous_close": 76327.81323699045,
+      "timestamp": "2026-05-25T15:44:41.008Z"
     }
   },
   "errors": []
