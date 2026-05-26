@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-05-25T20:23:24.442Z",
-  "next_update": "2026-05-26T02:23:24.442Z",
+  "generated_at": "2026-05-26T05:07:33.360Z",
+  "next_update": "2026-05-26T11:07:33.360Z",
   "data": {
     "brent": {
       "symbol": "cb.f",
       "name": "Brent Crude",
-      "value": 93.65,
-      "change_pct": -0.9518773135906837,
-      "change_abs": -0.8999999999999915,
-      "previous_close": 94.55,
-      "timestamp": "2026-05-25T19:30:00Z"
+      "value": 95.71,
+      "change_pct": 2.199679658302176,
+      "change_abs": 2.059999999999988,
+      "previous_close": 93.65,
+      "timestamp": "2026-05-26T07:07:29Z"
     },
     "sp500": {
       "symbol": "^spx",
@@ -23,29 +23,29 @@
     "dxy": {
       "symbol": "dx.f",
       "name": "DXY",
-      "value": 98.92,
-      "change_pct": 0.015166068449522842,
-      "change_abs": 0.015000000000000568,
-      "previous_close": 98.905,
-      "timestamp": "2026-05-25T20:29:59Z"
+      "value": 99.047,
+      "change_pct": 0.12838657501010445,
+      "change_abs": 0.12699999999999534,
+      "previous_close": 98.92,
+      "timestamp": "2026-05-26T07:07:29Z"
     },
     "usdbrl": {
       "symbol": "usdbrl",
       "name": "USD/BRL",
       "value": 5.0087,
-      "change_pct": 0.06592879689935476,
-      "change_abs": 0.0033000000000003027,
-      "previous_close": 5.0054,
+      "change_pct": 0,
+      "change_abs": 0,
+      "previous_close": 5.0087,
       "timestamp": "2026-05-25T18:56:20Z"
     },
     "ibov": {
       "symbol": "^bvp",
       "name": "IBOV",
       "value": 177815.72,
-      "change_pct": 0.6109054277161269,
-      "change_abs": 1079.6900000000023,
-      "previous_close": 176736.03,
-      "timestamp": "2026-05-25T22:08:00Z"
+      "change_pct": 0,
+      "change_abs": 0,
+      "previous_close": 177815.72,
+      "timestamp": "2026-05-25T23:00:00Z"
     },
     "vix": {
       "symbol": "VIXY",
@@ -59,11 +59,11 @@
     "btc": {
       "symbol": "BTC-USD",
       "name": "Bitcoin",
-      "value": 77417,
-      "change_pct": 1.0687476948145433,
-      "change_abs": 827.3924028945751,
-      "previous_close": 76589.60759710542,
-      "timestamp": "2026-05-25T20:23:24.442Z"
+      "value": 76669,
+      "change_pct": -0.8531265091561402,
+      "change_abs": -654.0835633049211,
+      "previous_close": 77323.08356330493,
+      "timestamp": "2026-05-26T05:07:33.360Z"
     }
   },
   "errors": []
