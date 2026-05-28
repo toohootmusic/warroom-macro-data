@@ -1,69 +1,69 @@
 {
-  "generated_at": "2026-05-28T16:46:21.615Z",
-  "next_update": "2026-05-28T22:46:21.615Z",
+  "generated_at": "2026-05-28T21:09:27.663Z",
+  "next_update": "2026-05-29T03:09:27.663Z",
   "data": {
     "brent": {
       "symbol": "cb.f",
       "name": "Brent Crude",
-      "value": 91.92,
-      "change_pct": -3.8091251569694435,
-      "change_abs": -3.6400000000000006,
-      "previous_close": 95.56,
-      "timestamp": "2026-05-28T18:46:18Z"
+      "value": 92.24,
+      "change_pct": 0.34812880765882637,
+      "change_abs": 0.3199999999999932,
+      "previous_close": 91.92,
+      "timestamp": "2026-05-28T23:08:29Z"
     },
     "sp500": {
       "symbol": "^spx",
       "name": "S&P 500",
-      "value": 7560.9,
-      "change_pct": 0.5385351842987075,
-      "change_abs": 40.5,
-      "previous_close": 7520.4,
-      "timestamp": "2026-05-28T18:45:52Z"
+      "value": 7563.6,
+      "change_pct": 0.03571003451970966,
+      "change_abs": 2.7000000000007276,
+      "previous_close": 7560.9,
+      "timestamp": "2026-05-28T22:06:41Z"
     },
     "dxy": {
       "symbol": "dx.f",
       "name": "DXY",
-      "value": 98.907,
-      "change_pct": -0.5659997989343545,
-      "change_abs": -0.5630000000000024,
-      "previous_close": 99.47,
-      "timestamp": "2026-05-28T18:46:18Z"
+      "value": 98.95,
+      "change_pct": 0.04347518375848663,
+      "change_abs": 0.043000000000006366,
+      "previous_close": 98.907,
+      "timestamp": "2026-05-28T22:59:15Z"
     },
     "usdbrl": {
       "symbol": "usdbrl",
       "name": "USD/BRL",
-      "value": 5.0421,
-      "change_pct": -0.3655693000830021,
-      "change_abs": -0.018500000000000405,
-      "previous_close": 5.0606,
-      "timestamp": "2026-05-28T18:44:04Z"
+      "value": 5.0368,
+      "change_pct": -0.10511493227026825,
+      "change_abs": -0.005299999999999194,
+      "previous_close": 5.0421,
+      "timestamp": "2026-05-28T18:56:56Z"
     },
     "ibov": {
       "symbol": "^bvp",
       "name": "IBOV",
-      "value": 175798.42,
-      "change_pct": 0.030754897013211553,
-      "change_abs": 54.05000000001746,
-      "previous_close": 175744.37,
-      "timestamp": "2026-05-28T18:31:00Z"
+      "value": 175063.41,
+      "change_pct": -0.41809818313498454,
+      "change_abs": -735.0100000000093,
+      "previous_close": 175798.42,
+      "timestamp": "2026-05-28T22:16:52Z"
     },
     "vix": {
       "symbol": "VIXY",
       "name": "VIX (proxy: VIXY ETF)",
-      "value": 23.78,
-      "change_pct": -1.45047,
-      "change_abs": -0.34999916,
+      "value": 23.67,
+      "change_pct": -1.90634,
+      "change_abs": -0.45999916,
       "previous_close": 24.13,
       "timestamp": "2026-05-28Z"
     },
     "btc": {
       "symbol": "BTC-USD",
       "name": "Bitcoin",
-      "value": 73209,
-      "change_pct": -2.429653921111179,
-      "change_abs": -1778.725339106283,
-      "previous_close": 74987.72533910628,
-      "timestamp": "2026-05-28T16:46:21.615Z"
+      "value": 73496,
+      "change_pct": -2.0986478694989796,
+      "change_abs": -1542.4222381669701,
+      "previous_close": 75038.42223816697,
+      "timestamp": "2026-05-28T21:09:27.663Z"
     }
   },
   "errors": []
