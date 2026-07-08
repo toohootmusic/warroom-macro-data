@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-08T04:18:29.047Z",
-  "next_update": "2026-07-08T10:18:29.047Z",
+  "generated_at": "2026-07-08T15:06:32.526Z",
+  "next_update": "2026-07-08T21:06:32.526Z",
   "data": {
     "brent": {
       "symbol": "cb.f",
@@ -50,20 +50,20 @@
     "vix": {
       "symbol": "VIXY",
       "name": "VIX (proxy: VIXY ETF)",
-      "value": 20.87,
-      "change_pct": 1.065381,
-      "change_abs": 0.22000122,
-      "previous_close": 20.65,
-      "timestamp": "2026-07-07Z"
+      "value": 21.69,
+      "change_pct": 3.92908,
+      "change_abs": 0.81999916,
+      "previous_close": 20.87,
+      "timestamp": "2026-07-08Z"
     },
     "btc": {
       "symbol": "BTC-USD",
       "name": "Bitcoin",
-      "value": 62756,
-      "change_pct": -0.6137127798892971,
-      "change_abs": -385.14159214732723,
-      "previous_close": 63141.14159214733,
-      "timestamp": "2026-07-08T04:18:29.047Z"
+      "value": 61756,
+      "change_pct": -2.604257427121443,
+      "change_abs": -1608.2852166931186,
+      "previous_close": 63364.28521669312,
+      "timestamp": "2026-07-08T15:06:32.526Z"
     }
   },
   "errors": [
