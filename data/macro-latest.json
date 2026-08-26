@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-26T13:43:32.415Z",
-  "next_update": "2026-08-26T19:43:32.415Z",
+  "generated_at": "2026-08-26T21:41:42.780Z",
+  "next_update": "2026-08-27T03:41:42.780Z",
   "data": {
     "brent": {
       "symbol": "cb.f",
@@ -50,27 +50,27 @@
     "vix": {
       "symbol": "VIXY",
       "name": "VIX (proxy: VIXY ETF)",
-      "value": 17.9,
-      "change_pct": -0.61077306,
-      "change_abs": -0.11000023,
+      "value": 17.82,
+      "change_pct": -1.054972,
+      "change_abs": -0.19000053,
       "previous_close": 18.01,
       "timestamp": "2026-08-26Z"
     },
     "btc": {
       "symbol": "BTC-USD",
       "name": "Bitcoin",
-      "value": 78376,
-      "change_pct": -0.6652367673759039,
-      "change_abs": -521.3859687985384,
-      "previous_close": 78897.38596879854,
-      "timestamp": "2026-08-26T13:43:32.415Z"
+      "value": 78759,
+      "change_pct": 0.19171804499049794,
+      "change_abs": 150.99521505406628,
+      "previous_close": 78608.00478494594,
+      "timestamp": "2026-08-26T21:41:42.780Z"
     }
   },
   "errors": [
     "brent: HTTP 404",
     "sp500: HTTP 404",
-    "dxy: HTTP 404",
     "usdbrl: HTTP 404",
+    "dxy: HTTP 404",
     "ibov: HTTP 404"
   ]
 }
