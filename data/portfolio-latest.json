@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-09-10T21:32:09.553Z",
-  "next_update": "2026-09-11T03:32:09.553Z",
+  "generated_at": "2026-09-11T05:35:25.743Z",
+  "next_update": "2026-09-11T11:35:25.743Z",
   "prices": {
     "BTC": {
       "symbol": "BTC",
       "source": "coingecko",
-      "value": 77209,
-      "change_pct": -1.3309425871788236,
-      "change_abs": -1027.607462134898,
-      "previous_close": 78236.6074621349,
-      "timestamp": "2026-09-10T21:32:09.265Z"
+      "value": 77071,
+      "change_pct": -1.7524747110710452,
+      "change_abs": -1350.6497845695653,
+      "previous_close": 78421.64978456957,
+      "timestamp": "2026-09-11T05:35:25.537Z"
     }
   },
   "errors": [
