@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-29T18:21:17.284Z",
-  "next_update": "2026-09-30T00:21:17.284Z",
+  "generated_at": "2026-09-29T22:51:12.568Z",
+  "next_update": "2026-09-30T04:51:12.568Z",
   "data": {
     "brent": {
       "symbol": "cb.f",
@@ -50,9 +50,9 @@
     "vix": {
       "symbol": "VIXY",
       "name": "VIX (proxy: VIXY ETF)",
-      "value": 16.73,
-      "change_pct": -0.357361,
-      "change_abs": -0.060000916,
+      "value": 16.68,
+      "change_pct": -0.65515548,
+      "change_abs": -0.11000061,
       "previous_close": 16.79,
       "timestamp": "2026-09-29Z"
     },
