@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-29T18:27:04.776Z",
-  "next_update": "2026-09-30T00:27:04.776Z",
+  "generated_at": "2026-09-29T22:54:53.563Z",
+  "next_update": "2026-09-30T04:54:53.563Z",
   "prices": {
     "BTC": {
       "symbol": "BTC",
@@ -17,9 +17,9 @@
     "BBAS3: HTTP 404",
     "BRAP4: HTTP 404",
     "CPFE3: HTTP 404",
+    "BTC: HTTP 403",
     "JBSS3: HTTP 404",
     "KLBN3: HTTP 404",
-    "BTC: HTTP 403",
     "SANB11: HTTP 404",
     "SAPR4: HTTP 404"
   ]
