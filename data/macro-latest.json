@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-28T23:45:00.489Z",
-  "next_update": "2026-09-29T05:45:00.489Z",
+  "generated_at": "2026-09-29T06:42:33.295Z",
+  "next_update": "2026-09-29T12:42:33.295Z",
   "data": {
     "brent": {
       "symbol": "cb.f",
@@ -71,6 +71,7 @@
     "sp500: HTTP 404",
     "dxy: HTTP 404",
     "usdbrl: HTTP 404",
-    "ibov: HTTP 404"
+    "ibov: HTTP 404",
+    "coingecko: HTTP 403"
   ]
 }
