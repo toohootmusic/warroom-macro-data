@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-10-22T05:43:45.495Z",
-  "next_update": "2026-10-22T11:43:45.495Z",
+  "generated_at": "2026-10-22T17:50:28.336Z",
+  "next_update": "2026-10-22T23:50:28.336Z",
   "prices": {
     "BTC": {
       "symbol": "BTC",
       "source": "coingecko",
-      "value": 82771,
-      "change_pct": 0.14690515253317904,
-      "change_abs": 121.59486380323762,
-      "previous_close": 82649.40513619676,
-      "timestamp": "2026-10-22T05:43:45.188Z"
+      "value": 81251,
+      "change_pct": -3.9511270043835207,
+      "change_abs": -3210.330202331654,
+      "previous_close": 84461.33020233165,
+      "timestamp": "2026-10-22T17:50:28.052Z"
     }
   },
   "errors": [
@@ -17,8 +17,8 @@
     "BBAS3: HTTP 404",
     "BRAP4: HTTP 404",
     "CPFE3: HTTP 404",
-    "JBSS3: HTTP 404",
     "KLBN3: HTTP 404",
+    "JBSS3: HTTP 404",
     "SANB11: HTTP 404",
     "SAPR4: HTTP 404"
   ]
