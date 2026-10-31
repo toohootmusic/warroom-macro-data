@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-10-30T22:54:30.499Z",
-  "next_update": "2026-10-31T04:54:30.499Z",
+  "generated_at": "2026-10-31T06:35:35.836Z",
+  "next_update": "2026-10-31T12:35:35.836Z",
   "prices": {
     "BTC": {
       "symbol": "BTC",
       "source": "coingecko",
-      "value": 76885,
-      "change_pct": -2.4716106648907354,
-      "change_abs": -1900.2978597012418,
-      "previous_close": 78785.29785970124,
-      "timestamp": "2026-10-30T22:54:30.190Z"
+      "value": 77188,
+      "change_pct": -1.658320974597567,
+      "change_abs": -1280.02479387237,
+      "previous_close": 78468.02479387238,
+      "timestamp": "2026-10-31T06:35:26.216Z"
     }
   },
   "errors": [
     "twelvedata-batch: HTTP 429",
-    "BBAS3: HTTP 404",
-    "BRAP4: HTTP 404",
-    "CPFE3: HTTP 404",
-    "JBSS3: HTTP 404",
-    "KLBN3: HTTP 404",
-    "SANB11: HTTP 404",
-    "SAPR4: HTTP 404"
+    "SANB11: fetch failed",
+    "KLBN3: fetch failed",
+    "JBSS3: fetch failed",
+    "CPFE3: fetch failed",
+    "BRAP4: fetch failed",
+    "BBAS3: fetch failed",
+    "SAPR4: fetch failed"
   ]
 }
