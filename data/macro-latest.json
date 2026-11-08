@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-08T07:03:43.506Z",
-  "next_update": "2026-11-08T13:03:43.506Z",
+  "generated_at": "2026-11-08T18:07:28.109Z",
+  "next_update": "2026-11-09T00:07:28.109Z",
   "data": {
     "brent": {
       "symbol": "cb.f",
@@ -59,11 +59,11 @@
     "btc": {
       "symbol": "BTC-USD",
       "name": "Bitcoin",
-      "value": 75770,
-      "change_pct": -0.25766675247078424,
-      "change_abs": -195.23409834711322,
-      "previous_close": 75965.23409834711,
-      "timestamp": "2026-11-08T07:03:43.506Z"
+      "value": 75688,
+      "change_pct": -0.12019189192104973,
+      "change_abs": -90.97083915720413,
+      "previous_close": 75778.9708391572,
+      "timestamp": "2026-11-08T18:07:28.108Z"
     }
   },
   "errors": [
