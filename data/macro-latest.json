@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-14T07:29:06.863Z",
-  "next_update": "2026-11-14T13:29:06.863Z",
+  "generated_at": "2026-11-14T18:32:59.007Z",
+  "next_update": "2026-11-15T00:32:59.007Z",
   "data": {
     "brent": {
       "symbol": "cb.f",
@@ -59,18 +59,18 @@
     "btc": {
       "symbol": "BTC-USD",
       "name": "Bitcoin",
-      "value": 67164,
-      "change_pct": -2.7815322904791735,
-      "change_abs": -1868.188347577432,
-      "previous_close": 69032.18834757744,
-      "timestamp": "2026-11-14T07:29:06.863Z"
+      "value": 65906,
+      "change_pct": -4.3354851033372155,
+      "change_abs": -2857.344812205425,
+      "previous_close": 68763.34481220543,
+      "timestamp": "2026-11-14T18:32:59.006Z"
     }
   },
   "errors": [
-    "ibov: fetch failed",
-    "usdbrl: fetch failed",
-    "dxy: fetch failed",
-    "sp500: fetch failed",
-    "brent: fetch failed"
+    "brent: HTTP 404",
+    "sp500: HTTP 404",
+    "dxy: HTTP 404",
+    "usdbrl: HTTP 404",
+    "ibov: HTTP 404"
   ]
 }
