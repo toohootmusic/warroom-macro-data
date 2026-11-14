@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-14T18:38:10.304Z",
-  "next_update": "2026-11-15T00:38:10.304Z",
+  "generated_at": "2026-11-14T22:55:04.438Z",
+  "next_update": "2026-11-15T04:55:04.438Z",
   "prices": {
     "BTC": {
       "symbol": "BTC",
@@ -14,12 +14,13 @@
   },
   "errors": [
     "twelvedata-batch: HTTP 429",
+    "BTC: HTTP 429",
     "BBAS3: HTTP 404",
+    "SANB11: HTTP 404",
     "BRAP4: HTTP 404",
+    "JBSS3: HTTP 404",
     "CPFE3: HTTP 404",
     "KLBN3: HTTP 404",
-    "JBSS3: HTTP 404",
-    "SANB11: HTTP 404",
     "SAPR4: HTTP 404"
   ]
 }
